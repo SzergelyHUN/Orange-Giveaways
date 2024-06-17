@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tool="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             x:Class="NagyGergelyProjekt3.Views.UserProfilePage"
+            Shell.ForegroundColor="DarkOrange"
+             Shell.TitleColor="DarkOrange"
+             Shell.BackgroundColor="{ AppThemeBinding Dark=Black, Light=#E1E1E1 }"
+            Title="Profil">
+
+
+    <ContentPage.Behaviors>
+        <tool:EventToCommandBehavior Command="{Binding AppearingCommand}" EventName="Appearing"/>
+    </ContentPage.Behaviors>
+    <ContentPage.Resources>
+        <Style TargetType="ImageButton">
+            <Setter Property="Margin" Value="0,10,0,0"/>
+        </Style>
+        <Style TargetType="HorizontalStackLayout">
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid RowDefinitions="220, 170, 50, *">
+            <VerticalStackLayout Grid.Row="0">
+                <ImageButton MaximumHeightRequest="210" MaximumWidthRequest="210" x:Name="ImagePickerTeszt" Source="{Binding UserProfilePicture}" Command="{Binding ChangeUserProfilePictureCommand}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="1">
+                <HorizontalStackLayout>
+                    <Label Text="Név:" VerticalOptions="Center" TextColor="DarkOrange" FontSize="24"/>
+                    <Entry HorizontalTextAlignment="Center" IsEnabled="{Binding SaveUsername}" Text="{Binding UserName}" BackgroundColor="{AppThemeBinding Dark=Black, Light=Gray}" TextColor="DarkOrange" FontSize="Large" FontAttributes="Bold" Margin="10,10,20,0" WidthRequest="200"/>
+                    <ImageButton IsVisible="{Binding SaveUsername}" Source="{StaticResource Key=DoneCheck}" Command="{Binding UserNameSaveCommand}" CommandParameter="Save"/>
+                    <ImageButton IsVisible="{Binding ChangeUsername}" Source="{StaticResource Key=Edit}" Command="{Binding UserNameSaveCommand}" CommandParameter="Change"/>
+                </HorizontalStackLayout>
+                <Label x:Name="AlertLBL" IsVisible="{Binding AlertIsVisible}" Text="A profil létrehozásához ad meg a neved" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="10" BackgroundColor="Red" HeightRequest="30"/>
+                <HorizontalStackLayout Margin="10">
+                    <Label TextColor="DarkOrange" Text="Összes begyűjtött játék: "/>
+                    <Label TextColor="DarkOrange" FontAttributes="Bold" Text="{Binding ClaimedGiveawaysCount, StringFormat='{0} db'}"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="10">
+                    <Label TextColor="DarkOrange" Text="Legértékesebb: "/>
+                    <Label TextColor="DarkOrange" FontAttributes="Bold" Text="{Binding MostValuableClaimedGiveaways, StringFormat='${0} '}"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="2">
+                <HorizontalStackLayout>
+                    <Label TextColor="DarkOrange" FontSize="Large" Text="Begyűjtött ajánlatok: "/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <ListView  RowHeight="70" Grid.Row="3" x:Name="termkekLstv" ItemSelected="termkekLstv_ItemSelected" ItemsSource="{Binding claimedGiveaways}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowDefinitions="*,3*,*" ColumnDefinitions="1*, 3*, 1*">
+                                <Image Margin="20,0,0,0" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" HeightRequest="80" WidthRequest="80" Source="{Binding thumbnail}"/>
+                                <Label Grid.Column="1" Grid.Row="1" Margin="12,0,0,0" HeightRequest="160" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding title}" FontAttributes="Bold"/>
+                                <Label Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding worth}" FontAttributes="Italic"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

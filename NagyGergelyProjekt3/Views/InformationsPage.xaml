@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NagyGergelyProjekt3.Views.InformationsPage"
+             Shell.ForegroundColor="DarkOrange"
+             Shell.TitleColor="DarkOrange"
+             Shell.BackgroundColor="{ AppThemeBinding Dark=Black, Light=#E1E1E1 }"
+             Title="Információk">
+    <ScrollView>
+        <Border Stroke="Orange" StrokeThickness="2">
+
+            <VerticalStackLayout Margin="10">
+                <HorizontalStackLayout HorizontalOptions="Center" Margin="0,10,0,10">
+                    <Image WidthRequest="70" HeightRequest="70" BackgroundColor="AliceBlue" Source="logo.png"/>
+                    <Label Margin="10,0,0,0" FontSize="18" FontAttributes="Bold" TextDecorations="Underline" VerticalOptions="Center" Text="Orange Giveaways v. 1.2"/>
+                </HorizontalStackLayout>
+
+                <Label FontSize="10" FontAttributes="Italic" Margin="0,0,5,25" HorizontalTextAlignment="End" Text="Készítette: Nagy Gergely"/>
+
+                <Label Margin="0,13,0,10" FontAttributes="Bold" FontSize="15" Text="Az alkalmazásról:"/>
+                <Label Text="Az alkalmazásom célja, hogy felhasználók számára egy központi helyet biztosítson, ahol egyszerűen és gyorsan megtalálhatják a különböző platformokon és oldalakon elérhető giveaway-eket. Az applikáció segítségével soha többé nem marad le egyetlen értékes ajándékról vagy promócióról sem."/>
+
+                <Label Margin="0,13,0,10" FontSize="15" FontAttributes="Bold" Text="Használt API: "/>
+                <Label Text="Az API fejlesztését és karbantartását végző csapat kérésére szeretném megosztani az oldaluk linkjét az alábbiakban. Ezen a linken keresztül további információkat találhat az API működéséről, a dokumentációról, valamint a csapattal való kapcsolatfelvételi lehetőségekről."/>
+                <Button x:Name="NavigateTo" HorizontalOptions="Center" TextColor="#0000EE" BackgroundColor="{AppThemeBinding Dark=Black, Light=White}" HeightRequest="50" WidthRequest="380" FontSize="15" Text="https://www.gamerpower.com/api-read" Clicked="NavigateTo_Clicked"/>
+            </VerticalStackLayout>
+        </Border>
+    </ScrollView>
+
+</ContentPage>

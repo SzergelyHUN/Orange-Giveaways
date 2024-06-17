@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NagyGergelyProjekt3.Views.GiveawaysPage"
+             xmlns:model ="clr-namespace:NagyGergelyProjekt3.ViewModels"
+             Shell.ForegroundColor="DarkOrange"
+             Shell.TitleColor="DarkOrange"
+             Shell.BackgroundColor="{ AppThemeBinding Dark=Black, Light=#E1E1E1 }"
+             Title="Giveaways">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="{StaticResource Key=UserProfile}" Command="{Binding NavigateToCommand}" CommandParameter="UserProfilePage"/>
+        <ToolbarItem IconImageSource="{StaticResource Key=Refresh}" Order="Default" Command="{Binding RefreshCommand}"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <CollectionView ItemsSource="{Binding giveAway}" SelectionMode="Single" SelectionChangedCommand="{Binding detailsCommand}" SelectedItem="{Binding selectedGiveaway}" >
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="10" HorizontalItemSpacing="10">
+                </GridItemsLayout>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout BackgroundColor="DarkOrange" Margin="5" Padding="10">
+                        <Image Source="{Binding thumbnail}" HeightRequest="200"/>
+                        <Label Text="{Binding title}" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="White"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+
+</ContentPage>

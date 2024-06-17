@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolKit.Maui"             
+             x:Class="NagyGergelyProjekt3.MainPage"
+             xmlns:model ="clr-namespace:NagyGergelyProjekt3.ViewModels"
+             Shell.ForegroundColor="DarkOrange"
+             Shell.TitleColor="DarkOrange"
+             Shell.BackgroundColor="{ AppThemeBinding Dark=Black, Light=#E1E1E1 }"
+             Title="">
+    <ContentPage.Behaviors>
+        
+        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Dark=Black, Light=LightGray}"/>
+    </ContentPage.Behaviors>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="{StaticResource Key=UserProfile}" Order="Default" Command="{Binding NavigateToCommand}" CommandParameter="UserProfilePage"/>
+        <ToolbarItem IconImageSource="{StaticResource Key=Information}" Command="{Binding NavigateToCommand}" CommandParameter="InformationsPage"/>
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="ContentLayout" Value="Top,0"/>
+        </Style>
+    </ContentPage.Resources>
+
+        <ScrollView>
+
+        <VerticalStackLayout>
+            <Button LineBreakMode="WordWrap" Margin="10" x:Name="MainText" Text="Orange Giveaways" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="50" WidthRequest="350" HeightRequest="160" TextColor="Black" BackgroundColor="DarkOrange"/>
+            <HorizontalStackLayout>
+                <Button ImageSource="{StaticResource Key=Games}" Text="Összes Giveaway" x:Name="AllGiveaways" Command="{Binding NavigateToCommand}" CommandParameter="GiveawaysPage" Clicked="WindowLikeAnimate_Clicked"/>
+                <Button ImageSource="{StaticResource Key=Platforms}" Text="Platformok" x:Name="Platforms" Command="{Binding NavigateToCommand}" CommandParameter="GiveawaysByPlatformsMenuPage" Clicked="WindowLikeAnimate_Clicked"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Button ImageSource="{StaticResource Key=Types}" Text="Típusok" x:Name="Types" Command="{Binding NavigateToCommand}" CommandParameter="GiveawaysByTypesMenuPage" Clicked="WindowLikeAnimate_Clicked"/>
+                <Button ImageSource="{StaticResource Key=LightOrDark}" Text="Szín váltás" x:Name="AppColorChange" Command="{Binding AppColorChangeCommand}"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

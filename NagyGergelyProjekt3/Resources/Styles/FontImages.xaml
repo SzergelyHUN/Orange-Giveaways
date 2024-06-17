@@ -1,0 +1,48 @@
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:res ="clr-namespace:NagyGergelyProjekt3.Resources"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <FontImage x:Key="Information" FontFamily="FontAwesome" Size="22" Color="Orange" Glyph="{x:Static res:IconFont.InfoCircle}">
+    </FontImage>
+    <FontImage x:Key="Share" FontFamily="FontAwesome" Size="22" Color="Orange" Glyph="{x:Static res:IconFont.ShareSquare}">
+    </FontImage>
+    <FontImage x:Key="DoneCheck" FontFamily="FontAwesome" Size="22" Color="Orange" Glyph="{x:Static res:IconFont.Check}">
+    </FontImage>
+    <FontImage x:Key="Edit" FontFamily="FontAwesome" Size="22" Color="Orange" Glyph="{x:Static res:IconFont.Edit}">
+    </FontImage>
+    <FontImage x:Key="UserProfile" FontFamily="FontAwesome" Size="24" Color="Orange" Glyph="{x:Static res:IconFont.User}">
+    </FontImage>
+    <FontImage x:Key="Refresh" FontFamily="FontAwesome" Size="22" Color="Orange" Glyph="{x:Static res:IconFont.Sync}">
+    </FontImage>
+    <FontImage x:Key="LightOrDark" FontFamily="FontAwesome" Size="72" Color="White" Glyph="{x:Static res:IconFont.Lightbulb}">
+    </FontImage>
+    <FontImage x:Key="Internet" FontFamily="FontAwesome" Size="85" Color="White" Glyph="{x:Static res:IconFont.Globe}">
+    </FontImage>
+    <FontImage x:Key="ClaimeGiveaway" FontFamily="FontAwesome" Size="85" Color="White" Glyph="{x:Static res:IconFont.ClipboardCheck}">
+    </FontImage>
+    <FontImage x:Key="Main" FontFamily="FontAwesome" Size="72" Color="White" Glyph="{x:Static res:IconFont.Star}">
+    </FontImage>
+    <FontImage x:Key="Dlc" FontFamily="FontAwesome" Size="72" Color="White" Glyph="{x:Static res:IconFont.StarHalf}">
+    </FontImage>
+    <FontImage x:Key="Other" FontFamily="FontAwesome" Size="72" Color="White" Glyph="{x:Static res:IconFont.StarOfLife}">
+    </FontImage>
+    <FontImage x:Key="Back" FontFamily="FontAwesome" Size="72" Color="White" Glyph="{x:Static res:IconFont.Backward}">
+    </FontImage>
+    <FontImage x:Key="Platforms" FontFamily="FontAwesome" Size="72" Color="White" Glyph="{x:Static res:IconFont.Desktop}">
+    </FontImage>
+    <FontImage x:Key="Games" FontFamily="FontAwesome" Size="72" Color="White" Glyph="{x:Static res:IconFont.Gamepad}">
+    </FontImage>
+    <FontImage x:Key="Types" FontFamily="FontAwesome" Size="72" Color="White" Glyph="{x:Static res:IconFont.Cube}">
+    </FontImage>
+    <FontImage x:Key="Pc" FontFamily="FontAwesomeMore" Size="72" Color="White" Glyph="{x:Static res:IconFont.Computer}">
+    </FontImage>
+    <FontImage x:Key="Mobile" FontFamily="FontAwesome" Size="72" Color="White" Glyph="{x:Static res:IconFont.MobileWithButton}">
+    </FontImage>
+    <FontImage x:Key="Playstation" FontFamily="FontAwesomeBrands" Size="72" Color="White" Glyph="{x:Static res:IconFontsBrands.Playstation}">
+    </FontImage>
+    <FontImage x:Key="Xbox" FontFamily="FontAwesomeBrands" Size="72" Color="White" Glyph="{x:Static res:IconFontsBrands.Xbox}">
+    </FontImage>
+
+</ResourceDictionary>

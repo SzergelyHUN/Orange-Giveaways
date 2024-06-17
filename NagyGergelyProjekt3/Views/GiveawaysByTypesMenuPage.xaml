@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NagyGergelyProjekt3.Views.GiveawaysByTypesMenuPage"
+             Shell.ForegroundColor="DarkOrange"
+             Shell.TitleColor="DarkOrange"
+             Shell.BackgroundColor="{ AppThemeBinding Dark=Black, Light=#E1E1E1 }"
+             Title="Játék típusok">
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="ContentLayout" Value="Top,0"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <HorizontalStackLayout>
+                <Button ImageSource="{StaticResource Key=Back}" Text="Vissza" x:Name="Back" Command="{Binding NavigateToCommand}" CommandParameter="back" Clicked="WindowLikeAnimate_Clicked"/>
+                <Button ImageSource="{StaticResource Key=Main}" Text="Játékok" x:Name="Game" Command="{Binding NavigateToCommand}" CommandParameter="game" Clicked="WindowLikeAnimate_Clicked"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Button ImageSource="{StaticResource Key=Dlc}" Text="Kiegészítők" x:Name="DLC" Command="{Binding NavigateToCommand}" CommandParameter="loot" Clicked="WindowLikeAnimate_Clicked"/>
+                <Button ImageSource="{StaticResource Key=Other}" Text="Egyéb" x:Name="Other" Command="{Binding NavigateToCommand}" CommandParameter="beta" Clicked="WindowLikeAnimate_Clicked"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
